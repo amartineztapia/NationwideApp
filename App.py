@@ -4,7 +4,7 @@ Created on Wed Apr 20 15:02:23 2022
 
 @author: alber
 """
-import os
+
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
