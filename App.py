@@ -29,15 +29,16 @@ dfindicators = list(df.columns)
 col1,pad1,col2 = st.columns([10,1,10])
 with col1:
      st.markdown('''
-          Select a set of G7 countries from the list on the left - you can add or delete as many as you want - 
-          and then adjust the left slider to the first quarter of interest and the right one to last quarter 
-          that you want data for.
-          The first quarter that there is data for is Q! 2007 and the final one is Q4 2021.
-          When you have selected the countries and the time period should select a data table.
-          The tables available are:
-          - __GPSA__ - Growth rate based on seasonally adjusted volume data, percentage change from previous quarter
-          - __GYSA__ - Growth rate based on seasonally adjusted volume data,  percentage change from same quarter of previous year, 
-          - __VIXOBSA__ - Volume index, OECD reference year, seasonally adjusted
+          The following web application was designed to provide portfolio managers with a dynamic tool that allows them to interact
+          with a robust statistical model (Deep Neural Network) aimed at predicting credit spreads up to 6 months in the future. 
+          The app's objective is to provide insight regarding leading economic indicators and how they affect our predictions.
+          Instructions:
+          First, let's start with taking a look at the indicators used in the model.
+          - Click on the dropdowm menu to the right (under "Select indicators")
+          - Add/drop the indicators you would like to plot
+          - Select a range of time
+          - The plot below will automatically update to reflect the selected indicators
+            in the selected range.
           ''')
 with col2:
 
@@ -119,17 +120,18 @@ with col4:
         st.pyplot(fig3)
     else:
         st.write("#")                      # Just leaving spaces
-        st.write("#")
         st.markdown('''
-             Select a set of G7 countries from the list on the left - you can add or delete as many as you want - 
-             and then adjust the left slider to the first quarter of interest and the right one to last quarter 
-             that you want data for.
-             The first quarter that there is data for is Q! 2007 and the final one is Q4 2021.
-             When you have selected the countries and the time period should select a data table.
-             The tables available are:
-             - __GPSA__ - Growth rate based on seasonally adjusted volume data, percentage change from previous quarter
-             - __GYSA__ - Growth rate based on seasonally adjusted volume data,  percentage change from same quarter of previous year, 
-             - __VIXOBSA__ - Volume index, OECD reference year, seasonally adjusted
+             Now it's time to start making predictions. The goal of this step is to help you understand the role of each indicator
+             in our model. By looking at our predictions at a specific point in time while also looking at the indicators used
+             to make those predictions, we can get an idea of why our model can anticipate ups or downs. Likewise, by tweaking 
+             our indicators we can observe how our model changes. Use the "A Very Useful Widget" on the left.  
+             - Again, select the indicators of interest on from the dropdown menu on the left.
+             - If you don't want to alter anything proceed to selecting the date of prediction.
+             - The date of prediction is the day from which the model will predict 6 months in the future by using data from 
+               6 months in the past.
+             - Press Calculate. Two plots will appear, the first one contains our predictions (X) and the actual values if
+               available (O). Our second plot shows the indicators selected up to 6 months prior to the date of prediction.
+              Making modifications (This is a beta version and this feature is not yet available (hire us for further development).
              ''')
 
 def prediction_Dense(o, datei):
