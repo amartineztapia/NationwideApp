@@ -10,9 +10,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import datetime
 
-
-DNN_Location = 'C:/Users/alber/Documents/Spring 22/Section 2/Practicum/Data/Deep Neural Networks/'
-df0 = pd.read_csv(DNN_Location + 'data.csv')
+df0 = pd.read_csv('data.csv')
 df05 = df0
 sorted(df0)   # Just to see col names
 
