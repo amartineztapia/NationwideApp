@@ -8,22 +8,16 @@ import os
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
-DNN_Location = 'C:/Users/alber/Documents/Spring 22/Section 2/Practicum/Data/Deep Neural Networks/'
-os.chdir(DNN_Location)
 from Window import *
 from tensorflow import keras
 import tensorflow as tf
 from datetime import timedelta
 
-df0 = pd.read_csv(DNN_Location + 'data.csv')
+df0 = pd.read_csv('data.csv')
 st.set_page_config(layout = "wide")
 
 from PIL import Image
-image = Image.open('C:/Users/alber/Documents/Spring 22/Section 2/Practicum/App/Nationwide.png')
-
-def header(cont):
-     st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{cont}</p>', unsafe_allow_html=True)
-
+image = Image.open('Nationwide.png')
 
 st.image(image, width=256)
 
@@ -100,8 +94,6 @@ dense = keras.models.load_model(DNN_Location + 'LSTM_130.h5')    # Loading the m
 
 LABEL_WIDTH = 23 
 SHIFT = 130 
-
-df1 = pd.read_csv(DNN_Location + 'data.csv')
 
 target_index = date.index(target)
 test_range = df[(target_index-SHIFT):target_index]
