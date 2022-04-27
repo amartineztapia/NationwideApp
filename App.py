@@ -90,7 +90,7 @@ with col3:
 
 date_indices2 = date_time.iloc[-130:]
 
-dense = keras.models.load_model(DNN_Location + 'LSTM_130.h5')    # Loading the model
+dense = keras.models.load_model('LSTM_130.h5')    # Loading the model
 
 LABEL_WIDTH = 23 
 SHIFT = 130 
