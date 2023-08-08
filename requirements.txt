@@ -3,4 +3,6 @@ tensorflow
 matplotlib
 Window
 datetime
+streamlit==1.9.0
+streamlit_webrtc==0.37.0
 protobuf~=3.19.0
